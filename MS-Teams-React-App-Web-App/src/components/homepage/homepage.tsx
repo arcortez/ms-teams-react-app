@@ -26,14 +26,17 @@ class Homepage extends React.Component<{}, any> {
     this.state = {};
   }
 
-  ComponentDidMount = () => {
-    var stringContext = localStorage.getItem("TEAMS_CONTEXT");
-    var msContext:microsoftTeams.Context = stringContext ? JSON.parse(stringContext) : null;
+  ComponentDidMount = () => { 
+    // INITIAL RETRIEVAL OF TEAMS CONTEXT
 
-    this.setState({
-      context: msContext
+    microsoftTeams.initialize();
+    microsoftTeams.getContext((context: microsoftTeams.Context) => {
+      localStorage.removeItem("TEAMS_CONTEXT");
+      localStorage.setItem("TEAMS_CONTEXT", JSON.stringify(context));
+      
+      // ADD HERE: additional local storage loading of data
     });
-    console.log(this.state);
+
   }
 
   public NoFound() {
@@ -42,30 +45,30 @@ class Homepage extends React.Component<{}, any> {
 
   render() {
     let msEntityId = this.state?.context?.entityId;
-
-    if (msEntityId === "<YOUR_APP_NAME_HERE>" || msEntityId === undefined) {
+    if (msEntityId === "MS Teams React App" || msEntityId === undefined) {
       return (
         <div>
           <main>
             <div className="navigation">
-              
               <h3>MS Teams React App</h3>
             </div>
-            <Switch>
-              {
-                // Navigation Pages
-              }
-              <Route exact path="/home" component={InitialDisplayPage} />
+              <Switch>
+                {
+                  // Navigation Pages
+                }
+                <Route exact path="/home" component={InitialDisplayPage} />
+                <Route exact path="/" component={InitialDisplayPage} />
+                <Route path="/config" component={TabConfig} />
 
-              {
-                // Sign-in pages and error pages
-              }
-              <Route path="/signin" component={SignInPage} />
-              <Route exact path="/signin-simple-start" component={SignInSimpleStart} />
-              <Route exact path="/signin-simple-end" component={SignInSimpleEnd} />
-              <Route exact path="/errorpage" component={ErrorPage} />
-              <Route exact path="/errorpage/:id" component={ErrorPage} />
-            </Switch>
+                {
+                  // Sign-in pages and error pages
+                }
+                <Route path="/signin" component={SignInPage} />
+                <Route exact path="/signin-simple-start" component={SignInSimpleStart} />
+                <Route exact path="/signin-simple-end" component={SignInSimpleEnd} />
+                <Route exact path="/errorpage" component={ErrorPage} />
+                <Route exact path="/errorpage/:id" component={ErrorPage} />
+              </Switch>
           </main>
         </div>
       );
@@ -76,8 +79,8 @@ class Homepage extends React.Component<{}, any> {
             //On Config
           }
           <Switch>
+            <Route exact path="/config" component={TabConfig} />
             <Route exact path="/" component={InitialDisplayPage} />
-            <Route path="/config" component={TabConfig} />
           </Switch>
         </>
       );

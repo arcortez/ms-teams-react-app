@@ -23,8 +23,8 @@ class TabConfig extends React.Component {
       microsoftTeams.settings.setSettings({
         suggestedDisplayName: "MS Teams React App",
         entityId: "MS Teams React App",
-        contentUrl: baseUrl + "/",
-        websiteUrl: baseUrl + "/",
+        contentUrl: baseUrl + "/home",
+        websiteUrl: baseUrl + "/home",
       });
       saveEvent.notifySuccess();
     });

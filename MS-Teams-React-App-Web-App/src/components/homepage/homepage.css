@@ -1,0 +1,16 @@
+.custom-header .nav-link {
+  color: black !important;
+  padding-bottom: 15px;
+}
+
+.custom-header .is-active {
+  color:#6264a7!important;
+  border-bottom: solid 3.5px #6264a7;
+}
+
+.navigation {
+  width: 100%;
+  background-color: white;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  padding: 15px;
+}

@@ -13,14 +13,3 @@
 .hide-item {
   display: none;
 }
-
-.member-item {
-  padding: 10px;
-  display: inline-block;
-  border-radius: 5px;
-  margin-bottom: 3px;
-}
-
-.member-item:hover {
-  background-color: #efefef;
-}

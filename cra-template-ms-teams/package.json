@@ -1,0 +1,17 @@
+{
+  "name": "cra-template-ms-teams-app",
+  "version": "1.0.0",
+  "keywords": [
+    "react",
+    "create-react-app",
+    "template",
+    "typescript",
+    "Microsoft Teams"
+  ],
+  "description": "The base MS Teams React template for Create React App.",
+  "license": "MIT",
+  "files": [
+    "template",
+    "template.json"
+  ]
+}

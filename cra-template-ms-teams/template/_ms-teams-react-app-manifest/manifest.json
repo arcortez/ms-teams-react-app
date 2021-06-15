@@ -1,0 +1,40 @@
+{
+  "$schema": "https://developer.microsoft.com/en-us/json-schemas/teams/v1.9/MicrosoftTeams.schema.json",
+  "manifestVersion": "1.9",
+  "version": "1.0.2",
+  "id": "00000000-0000-0000-0000-000000000005",
+  "packageName": "ms.teams.react.app",
+  "developer": {
+    "name": "Microsoft Inc",
+    "websiteUrl": "https://www.teams.com",
+    "privacyUrl": "https://www.teams.com/privacy",
+    "termsOfUseUrl": "https://www.teams.com/termsofuse"
+  },
+  "icons": {
+    "color": "icon.png",
+    "outline": "outline.png"
+  },
+  "name": {
+    "short": "MS Teams React App",
+    "full": "An MS Teams React App Template"
+  },
+  "description": {
+    "short": "MS Teams React App",
+    "full": "MS Teams React Application"
+  },
+  "accentColor": "#FFFFFF",
+  "configurableTabs": [
+    {
+      "configurationUrl": "https://b5bbae97c395.ngrok.io/config",
+      "canUpdateConfiguration": true,
+      "scopes": [ "team" ],
+      "context": [ "channelTab" ]
+    }
+  ],
+  "permissions": ["identity", "messageTeamMembers"],
+  "validDomains": [ "b5bbae97c395.ngrok.io" ],
+  "webApplicationInfo": {
+    "id": "41394e07-a230-4c28-9bac-479f009fa2b3",
+    "resource": "api://b5bbae97c395.ngrok.io"
+  }
+}

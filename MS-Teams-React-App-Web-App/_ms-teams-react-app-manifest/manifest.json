@@ -1,9 +1,9 @@
 {
   "$schema": "https://developer.microsoft.com/en-us/json-schemas/teams/v1.9/MicrosoftTeams.schema.json",
   "manifestVersion": "1.9",
-  "version": "1.0.0",
-  "id": "00000000-0000-0000-0000-000000000000",
-  "packageName": "com.microsoft.teams.resourcetracker",
+  "version": "1.0.2",
+  "id": "00000000-0000-0000-0000-000000000005",
+  "packageName": "ms.teams.react.app",
   "developer": {
     "name": "Microsoft Inc",
     "websiteUrl": "https://www.teams.com",
@@ -11,7 +11,7 @@
     "termsOfUseUrl": "https://www.teams.com/termsofuse"
   },
   "icons": {
-    "color": "color.png",
+    "color": "icon.png",
     "outline": "outline.png"
   },
   "name": {
@@ -25,16 +25,16 @@
   "accentColor": "#FFFFFF",
   "configurableTabs": [
     {
-      "configurationUrl": "https://<app service domain>/config",
+      "configurationUrl": "https://b5bbae97c395.ngrok.io/config",
       "canUpdateConfiguration": true,
-      "scopes": ["team"],
-      "context": ["channelTab"]
+      "scopes": [ "team" ],
+      "context": [ "channelTab" ]
     }
   ],
   "permissions": ["identity", "messageTeamMembers"],
-  "validDomains": ["<app service domain>"],
+  "validDomains": [ "b5bbae97c395.ngrok.io" ],
   "webApplicationInfo": {
-    "id": "<client id>",
-    "resource": "api://<app service domain>"
+    "id": "41394e07-a230-4c28-9bac-479f009fa2b3",
+    "resource": "api://b5bbae97c395.ngrok.io"
   }
 }
